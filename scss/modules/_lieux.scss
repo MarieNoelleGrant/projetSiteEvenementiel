@@ -1,0 +1,128 @@
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+
+/*** GÉNÉRAL POUR LA SECTION/ASIDE LIEUX ***/
+
+/* Règles générales organisation conteneur */
+.lieux {
+  margin: 30px 2%;
+  @include ombrePortee();
+  background-color: $blanc;
+  @media (min-width: $bureau) {
+    width: span(6 of 12);
+    float: left;
+    margin: 30px 0;
+  }
+
+  /* Règles spécifiques sections précises */
+  &__titre {
+    position: absolute;
+    left: 20px;
+    @media (min-width: $bureau) {
+      left: initial;
+      padding-left: 20px;
+    }
+  }
+
+  /* Mise en forme des éléments de liste */
+  &__liste,
+  &__sousListe {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: span(4);
+  }
+
+  &__liste {
+    &Item {
+      background-color: $blanc;
+      color: $noir;
+      border: 1px solid $noir;
+      padding: 10px 0;
+      position: relative;
+      &--fondCouleur {
+        background-color: $fushia;
+        color: $blanc;
+        padding-bottom: 0
+      }
+    }
+  }
+
+  &__sousListe {
+    background-color: $blanc;
+    color: $noir;
+    padding: 10px;
+    margin-top: 10px;
+    &--ferme {
+      display: none;
+    }
+    &Item {
+      @include fontSize(16px);
+      margin-right: 20px;
+      .lieux__lien {
+        padding-left: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__lien {
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 20px;
+  }
+
+
+  /* Mise en forme des éléments interactifs (ONGLETS) */
+  &__btnAccordeon {
+    color: $noir;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 4px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    &--ferme {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto 0 auto auto;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__chevron {
+    &--blanc {
+      color: $blanc;
+    }
+  }
+
+  &__titreLieu {
+    padding-left: 10px;
+    padding-right: 40px;
+    display: inline-block;
+  }
+
+
+}
+
+
+/*** POUR RENDRE LES ONGLETS ET LEUR CONTENU VISIBLE SI JAVASCRIPT DÉSACTIVÉ ***/
+.js {
+  &--ferme {
+    .lieux__liste {
+      display: none;
+    }
+  }
+  &__sousListe {
+    &--ferme {
+      display: none;
+    }
+  }
+}

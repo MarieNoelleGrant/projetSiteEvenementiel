@@ -1,0 +1,40 @@
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+
+.bouton {
+  background-color: $turquoise;
+  border-radius: 20px;
+  color: $blanc;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  @media (min-width:601px) {
+    font-size: 18px;
+  }
+  &:hover, &--hover {
+    background-image: linear-gradient($turquoise 50%, darken($turquoise, 15%) 50%);
+  }
+  &--jaune {
+    background-color: $jaune;
+    color: $noir;
+    padding: 10px 15px;
+    &:hover, &--hover {
+      padding: 10px 15px;
+      color: $noir;
+      background-image: linear-gradient($jaune 50%, darken($jaune, 15%) 50%);
+      @include ombreInterieure();
+    }
+  }
+  &--fushia {
+    background-color: $fushia;
+    &:hover, &--hover {
+      background-image: linear-gradient($fushia 50%, darken($fushia, 15%) 50%);
+    }
+  }
+  &--carre {
+    border-radius: 2px;
+  }
+}

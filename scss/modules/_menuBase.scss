@@ -1,0 +1,267 @@
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+
+
+/*** IMPORTANT utilisation du min-width: 700px pour les @media, pour que le menu mobile reste aussi pour le format "tablette" ***/
+
+.menu {
+  &__btnMobile {
+    background: url(../images/elementsGraphiques/icone_menu--ouvert.svg) center top no-repeat;
+    border-color: transparent;
+    padding: 10px;
+    padding-bottom: 0;
+    min-width: 40px;
+    min-height: 40px;
+    color: $blanc;
+
+    &:hover,
+    &:active {
+      font-weight: bolder;
+      transform: scale(1.1);
+    }
+    &:focus {
+      outline: none;
+    }
+    &_libelle {
+      display: inline-block;
+      padding-top: 20px;
+    }
+  }
+
+  &__btnAccordeon {
+    color: $blanc;
+    background-color: transparent;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__liste,
+  &__sousListe {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: span(4);
+  }
+
+  &__liste {
+    background-color: $grisFonce;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-height: none;
+    position: absolute;
+    width: 100%;
+    top: 72px;
+    left: 0;
+    z-index: 9999;
+    &Item {
+      position: relative;
+      @include fontSize(18px);
+      &--actif {
+        .menu__lien--off {
+          background: url('../images/elementsGraphiques/bg_hover_OFF.svg') 10px center no-repeat;
+          background-size: contain;
+          font-weight: 500;
+        }
+        .menu__lien--prog {
+          background: url('../images/elementsGraphiques/bg_hover_prog.svg') 10px center no-repeat;
+          background-size: contain;
+          font-weight: 500;
+        }
+        .menu__lien--artistes {
+          background: url('../images/elementsGraphiques/bg_hover_artistes.svg') 10px center no-repeat;
+          background-size: contain;
+          font-weight: 500;
+        }
+        .menu__lien--partenaires {
+          background: url('../images/elementsGraphiques/bg_hover_partenaires.svg') 10px center no-repeat;
+          background-size: contain;
+          font-weight: 500;
+        }
+        @media (min-width:700px) {
+          position: relative;
+          &:after {
+            content: url('../images/elementsGraphiques/icone_triangleBas_menu.svg');
+            position: absolute;
+            display: block;
+            top: 83px;
+            z-index: 9999;
+          }
+        }
+      }
+    }
+  }
+
+
+  &__sousListe {
+    background-color: $blanc;
+    color: $noir;
+    padding: 5px 20px 20px 80px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    &Item {
+      .menu__lien {
+        margin-right: 30px;
+      }
+    }
+    &--ferme {
+      display: none;
+    }
+    // pour faire limitation visuelle bas du menu
+    &:last-of-type {
+      border-bottom: 10px solid $grisFonce;
+      @media (min-width: 700px) {
+        border-bottom: none;
+      }
+    }
+    // pour triangle décoratif visible à l'ouverture de l'onglet
+    &:before {
+      content: url('../images/elementsGraphiques/icone_triangleBas_menu.svg');
+      position: absolute;
+      display: block;
+      top: 60px;
+      left: 20px;
+      z-index: 9999;
+      @media (min-width:700px) {
+        content: " ";
+      }
+    }
+    &Item {
+      @include fontSize(16px);
+      margin-right: 20px;
+      .menu__lien {
+        border-bottom: 5px solid transparent;
+        padding-left: 0;
+        padding-bottom: 0;
+        &:hover,
+        &:active {
+          border-bottom: 5px solid $turquoise;
+        }
+      }
+    }
+  }
+  // Liens du menu
+  &__lien {
+    display: inline-block;
+    padding: 1em 0;
+    letter-spacing: 0.15rem;
+    text-decoration: none;
+    padding-left: 20px;
+    &:focus {
+      outline: none;
+    }
+    &--off {
+      &:hover,
+      &:active {
+        background: url('../images/elementsGraphiques/bg_hover_OFF.svg') 10px center no-repeat;
+        background-size: contain;
+      }
+    }
+    &--prog {
+      &:hover,
+      &:active {
+        background: url('../images/elementsGraphiques/bg_hover_prog.svg') 10px center no-repeat;
+        background-size: contain;
+      }
+    }
+    &--artistes {
+      &:hover,
+      &:active {
+        background: url('../images/elementsGraphiques/bg_hover_artistes.svg') 10px center no-repeat;
+        background-size: contain;
+      }
+    }
+    &--partenaires {
+      &:hover,
+      &:active {
+        background: url('../images/elementsGraphiques/bg_hover_partenaires.svg') 10px center no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+
+  &--ferme {
+    .menu__btnMobile {
+      background-image: url(../images/elementsGraphiques/icone_menu--ferme.svg);
+    }
+  }
+
+  // Si le JavaScript est activé
+  .js {
+    &__liste {
+      max-height: 100vh;
+      overflow: hidden;
+      transition: max-height 0.5s;
+    }
+    &--ferme {
+      .menu__liste {
+        max-height: 0;
+        @media (min-width: 700px) {
+          max-height: none;
+
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .conteneur {
+    display: block;
+  }
+  .menu {
+    width: span(8 of 12);
+    display: inline-block;
+    &__btnMobile {
+      display: none;
+    }
+    &__liste {
+      position: initial;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      &Item {
+        position: initial;
+        &--actif {
+          .menu__sousListe {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-end;
+            align-items: center;
+            position: absolute;
+            top: 83px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 9999;
+            padding: 10px 13px;
+            //margin-right: 40px;
+            &Item {
+              @media (min-width: 700px) {
+                margin-right: 100px;
+                &:last-of-type {
+                  margin-right: 0;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+    &__listeItem {
+      &:first-child {
+        border: none;
+      }
+    }
+    &__lien {
+      padding-left: 0;
+    }
+  }
+
+}

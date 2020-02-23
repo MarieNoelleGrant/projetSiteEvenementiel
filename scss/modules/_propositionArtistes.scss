@@ -1,0 +1,73 @@
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+
+
+.espaceArtistesProposes {
+  background-color: $grisFonce;
+  margin-top: 45px;
+  color: $blanc;
+  .conteneur {
+    padding: 15px 0;
+  }
+  &__titre {
+    padding: 0 3%;
+  }
+  &__liste {
+    width: span(3 of 4);
+    margin: 0 auto;
+    @media (min-width: $bureau) {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      width: 100%;
+      margin: inherit;
+    }
+    &Item {
+      position: relative;
+      margin-bottom: 40px;
+      @media (min-width: $bureau) {
+        width: span(4 of 12);
+      }
+      &:hover {
+        .espaceArtistesProposes__nomArtiste, .espaceArtistesProposes__iconePlus {
+          background-image: linear-gradient($turquoise 50%, darken($turquoise, 15%) 50%)
+        }
+      }
+    }
+  }
+  &__nomArtiste {
+    background-color: transparentize($turquoise, 0.1);
+    border-radius: 0;
+    text-align: center;
+    @include fontSize(22px);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px 0;
+    z-index: 9999;
+  }
+  &__iconePlus {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+  }
+  &__cercle {
+    fill: $turquoise;
+  }
+
+  &__plus {
+    @include fontSize(24px);
+    position: absolute;
+    top: 8px;
+    left: 11px;
+  }
+}

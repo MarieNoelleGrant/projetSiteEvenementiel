@@ -1,0 +1,268 @@
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+
+/*** GÉNÉRAL POUR LA FICHE ARTISTE ***/
+
+.fiche {
+  /* Images arrière plan main */
+  background: url('../images/elementsGraphiques/geometry.png') top left repeat;
+  @media (min-width: $bureau) {
+    background: url('../images/elementsGraphiques/geometry_@2x.png') top left repeat;
+    .deco_background {
+      background-image: url('../images/elementsGraphiques/motif_background_eclair2.svg'), url('../images/elementsGraphiques/motif_background_eclair4.svg'),
+      url('../images/elementsGraphiques/motif_background_eclair3.svg'), url('../images/elementsGraphiques/motif_background_eclair1.svg');
+      background-position: -15% 15%, 115% 30%, 120% 80%, -20% 60%;
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+      background-size: 45% 800px, 45% 800px, 45% 1000px, 45% 800px;
+    }
+  }
+
+  /* Règles pour banner ficher */
+  &__banner {
+    position: relative;
+    background-color: $grisFonce;
+    padding-bottom: 25%;
+    margin-bottom: 30px;
+    @media (min-width: 701px) {
+      background: url('../images/elementsGraphiques/bg_bannerFIche_table_w2880.jpg') left center no-repeat;
+      background-size: cover;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      .conteneur {
+        position: relative;
+        display: flex;
+        flex-flow: row nowrap;
+        padding-bottom: 30px;
+        padding-top: 30px;
+      }
+      &_imgArtiste {
+        margin-left: span(5 of 12) + gutter(12);
+      }
+    }
+    &_espaceNom {
+      position: absolute;
+      background-color: $blanc;
+      padding: 10px 30px;
+      width: 80%;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      & h1 {
+        margin: 0;
+      }
+      @media (min-width: 701px) {
+        width: span(6 of 12);
+        // avec le absolute, pas possible de mettre valeur span() + gutter () logique???
+        left: 33%;
+      }
+    }
+    &_eleGraph {
+      background: url('../images/elementsGraphiques/bg_h1_artiste.svg') center center no-repeat;
+      background-size: contain;
+      padding: 20px 0 20px;
+    }
+  }
+
+
+  /* Règles générales pour la section espaceInfoArtiste */
+  &__espaceInfoArtiste {
+    background-color: $blanc;
+  }
+  @media (min-width: $bureau) {
+    &__espaceInfoArtiste {
+      background-color: transparent;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      @include ombrePortee();
+      margin-top: 30px;
+    }
+    &__bioArtiste, &__evenementsArtiste, &__imagesArtiste, &__extraitsArtiste {
+      //width: span(6 of 12) + gutter(12)/2 ;
+      width: 500px;
+    }
+
+    &__imagesArtiste {
+      max-height: 500px;
+      overflow-y: hidden;
+    }
+
+  }
+}
+
+/*** CLASSES SPÉCIFIQUES POUR SECTIONS ***/
+
+/* Règles spécifiques pour section .bioArtiste */
+.bioArtiste {
+  background-color: $blanc;
+  padding: 5px 2%;
+  &__liste {
+    &Item {
+      padding: 10px;
+    }
+  }
+  &__reseauxSociaux {
+    width: span(2 of 4);
+    .bioArtiste__sousListe {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      &Item {
+        @include fontSize(50px);
+        &:hover {
+          color: $fushia;
+        }
+      }
+    }
+  }
+  &__siteWeb {
+    text-decoration: underline;
+    &:hover {
+      color: $fushia;
+    }
+  }
+  @media (min-width: $bureau) {
+    padding-top: 0;
+    padding-bottom: 0;
+    &__titre {
+      margin-bottom: 0;
+    }
+    &__liste {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    &__description {
+      max-height: 280px;
+      overflow-y: scroll;
+      padding-right: 10px;
+    }
+    &__siteWeb {
+      width: span(3 of 6);
+      overflow-wrap: break-word;
+      display: inline-block;
+    }
+    &__reseauxSociaux {
+      width: span(3 of 6);
+      display: inline-block;
+    }
+  }
+}
+
+/* Règles spécifiques pour section .evenementArtiste */
+
+// *** Mise en forme des dates et autres infos pour événements de l'artiste
+.evenementsArtiste {
+  background-color: $grisFonce;
+  color: $blanc;
+  padding: 5px 2%;
+  @media(min-width: $bureau) {
+    line-height: 1.375;
+  }
+  &__titre {
+    padding-left: 3%;
+    @media (min-width: $bureau) {
+      margin-bottom: 0;
+    }
+  }
+  &__liste {
+    font-family: "Titillium Web", Arial, sans-serif;
+    text-transform: uppercase;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    &Item {
+      display: flex;
+      flex-flow: row-reverse wrap;
+      justify-content: center;
+      align-items: center;
+      @media (min-width: $bureau) {
+        flex-flow: column-reverse wrap;
+      }
+    }
+  }
+
+  &__infosEvenement,
+  &__nomLieu {
+    letter-spacing: 2.5px;
+    @include fontSize(22px);
+    width: span(1 of 4) + gutter()*2;
+    @media(max-width: 450px) {
+      @include fontSize(18px);
+      width: span(2 of 4);
+    }
+  }
+  &__nomLieu {
+    font-weight: 700;
+    padding-left: 10px;
+  }
+  &__infosEvenement {
+    text-align: right;
+    padding-right: 10px;
+    border-right: 2px solid $blanc;
+    &_jourSemaine {
+      font-weight: 400;
+    }
+    &_jour {
+      @media(max-width: 450px) {
+        @include fontSize(32px);
+      }
+      @include fontSize(38px);
+      font-weight: 900;
+    }
+    &_mois {
+      font-weight: 900;
+    }
+    &_heure {
+      @media(max-width: 450px) {
+        @include fontSize(32px);
+      }
+      @include fontSize(38px);
+      font-weight: 900;
+      overflow-wrap: break-word;
+    }
+  }
+  @media (min-width: $bureau) {
+    &__infosEvenement {
+      width: span(6 of 6);
+      text-align: left;
+      border-right: none;
+      margin-bottom: 0;
+      &_jourSemaine {
+        @include fontSize(30px);
+      }
+      &_jour {
+        @include fontSize(50px);
+      }
+      &_mois {
+        @include fontSize(30px);
+      }
+      &_heure {
+        @include fontSize(50px);
+      }
+    }
+    &__nomLieu {
+      width: span(6 of 6);
+      margin-top: 0;
+      padding-left: 0;
+      @include fontSize(30px);
+    }
+
+  }
+}
+
+
+/* Règles spécifiques pour section .extraitsArtiste */
+.extraitsArtiste {
+  &__titre {
+    padding-left: 5%;
+    @media (min-width: $bureau) {
+      display: none;
+    }
+  }
+  &__lecteurAudio {
+    padding-bottom: 30px;
+  }
+}

@@ -1,0 +1,86 @@
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+
+.gds {
+  &__titre {
+    border-bottom: 3px solid lighten(black, 22%);
+    text-align: left;
+    padding-bottom: 5px;
+  }
+  &__sousTitre {
+    border-bottom: 1px solid lighten(black, 22%);
+    text-align: left;
+    padding-bottom: 5px;
+    font-family: 'Roboto', Arial, sans-serif;
+    text-transform: none;
+  }
+  &__description {
+    @include fontSize(14px);
+  }
+  &__titreTypo {
+    display: inline-block;
+    width: span(6 of 12);
+    padding-left: 30px;
+    &--blanc {
+      background-color: $grisFonce;
+      color: $blanc;
+    }
+  }
+  &__palette {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style-type: none;
+    padding: 0;
+    &Item {
+      margin: 5px 0;
+      width: span(4 of 12);
+    }
+    &Couleur {
+      border: 1px solid gray;
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+      &--grisFonce {
+        background-color: $grisFonce;
+      }
+      &--turquoise {
+        background-color: $turquoise;
+      }
+      &--blanc {
+        background-color: $blanc;
+      }
+      &--noir {
+        background-color: $noir;
+      }
+      &--jaune {
+        background-color: $jaune;
+      }
+      &--fushia {
+        background-color: $fushia;
+      }
+      &--fushiaFonce {
+        background-color: darken($fushia, 15%);
+      }
+      &--jauneFonce {
+        background-color: darken($jaune, 15%);
+      }
+      &--turquoiseFonce {
+        background-color: darken($turquoise, 15%);
+      }
+    }
+  }
+  &__style {
+    width: 100px;
+    height: 100px;
+    &--ombrePortee {
+      @include ombrePortee();
+    }
+    &--ombreInterieure {
+      @include ombreInterieure();
+    }
+
+  }
+}

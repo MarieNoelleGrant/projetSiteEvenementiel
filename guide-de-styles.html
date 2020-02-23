@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guide de styles</title>
+    <link rel="stylesheet" href="css/guide.css">
+</head>
+<body>
+    <div class="conteneur">
+        <h1 class="gds__titre">Guide de styles</h1>
+        <h2 class="gds__sousTitre">Palette de couleurs</h2>
+        <p>Couleurs principales</p>
+        <ul class="gds__palette">
+            <li class="gds__paletteItem">
+                <div class="gds__paletteCouleur gds__paletteCouleur--grisFonce"></div>
+                <p class="gds__description"><code>$grisFonce</code> - #1F1F1F</p>
+            </li>
+            <li class="gds__paletteItem">
+                <div class="gds__paletteCouleur gds__paletteCouleur--turquoise"></div>
+                <p class="gds__description"><code>$turquoise</code> - #2F8B8B</p>
+            </li>
+            <li class="gds__paletteItem">
+                <div class="gds__paletteCouleur gds__paletteCouleur--blanc"></div>
+                <p class="gds__description"><code>$blanc</code> - #FFFFFF</p>
+            </li>
+            <li class="gds__paletteItem">
+                <div class="gds__paletteCouleur gds__paletteCouleur--jaune"></div>
+                <p class="gds__description"><code>$jaune</code> - #E5A90E</p>
+            </li>
+            <li class="gds__paletteItem">
+                <div class="gds__paletteCouleur gds__paletteCouleur--fushia"></div>
+                <p class="gds__description"><code>$fushia</code> - #8B2F71</p>
+            </li>
+            <li class="gds__paletteItem">
+                <div class="gds__paletteCouleur gds__paletteCouleur--noir"></div>
+                <p class="gds__description"><code>$noir</code> - #000000</p>
+            </li>
+        </ul>
+        <p>Couleurs secondaires</p>
+        <ul class="gds__palette">
+            <li class="gds__paletteItem">
+                <div class="gds__paletteCouleur gds__paletteCouleur--fushiaFonce"></div>
+                <p class="gds__description"><code>$fushia</code> fonci de 15%</p>
+            </li>
+            <li class="gds__paletteItem">
+                <div class="gds__paletteCouleur gds__paletteCouleur--jauneFonce"></div>
+                <p class="gds__description"><code>$jaune</code> fonci de 15%</p>
+            </li>
+            <li class="gds__paletteItem">
+                <div class="gds__paletteCouleur gds__paletteCouleur--turquoiseFonce"></div>
+                <p class="gds__description"><code>$turquoise</code> fonci de 15%</p>
+            </li>
+        </ul>
+
+
+        <h2 class="gds__sousTitre">Typographie</h2>
+        <div class="gds__titreTypo">
+            <h1>Titre niveau 1</h1>
+            <p class="gds__description">Mobile : 30px, Titillium Web, black</p>
+            <p class="gds__description">Bureau : 50px, Titillium Web, black</p>
+            <h2>Titre niveau 2</h2>
+            <p class="gds__description">Mobile : 26px, Titillium Web, black</p>
+            <p class="gds__description">Bureau : 40px, Titillium Web, black</p>
+            <h3>Titre niveau 3</h3>
+            <p class="gds__description">Mobile : 22px, Roboto, bold</p>
+            <p class="gds__description">Bureau : 30px, Roboto, bold</p>
+            <h4>Titre niveau 4</h4>
+            <p class="gds__description">Mobile : 18px, Roboto, bold</p>
+            <p class="gds__description">Bureau : 24px, Roboto, bold</p>
+        </div>
+        <div class="gds__titreTypo gds__titreTypo--blanc">
+            <h1>Titre niveau 1</h1>
+            <p class="gds__description">Mobile : 30px, Titillium Web, black</p>
+            <p class="gds__description">Bureau : 50px, Titillium Web, black</p>
+            <h2>Titre niveau 2</h2>
+            <p class="gds__description">Mobile : 26px, Titillium Web, black</p>
+            <p class="gds__description">Bureau : 40px, Titillium Web, black</p>
+            <h3>Titre niveau 3</h3>
+            <p class="gds__description">Mobile : 22px, Roboto, bold</p>
+            <p class="gds__description">Bureau : 30px, Roboto, bold</p>
+            <h4>Titre niveau 4</h4>
+            <p class="gds__description">Mobile : 18px, Roboto, bold</p>
+            <p class="gds__description">Bureau : 24px, Roboto, bold</p>
+        </div>
+
+        <h2 class="gds__sousTitre">Éléments de style</h2>
+        <h3>Ombre portée (mixin <code>ombrePortee</code>)</h3>
+        <div class="gds__style gds__style--ombrePortee"></div>
+        <p class="gds__description">X : 0px, Y : 0px, étendue 25px, <code>$noir</code> à 75% de transparence</p>
+        <h3>Ombre intérieure (mixin <code>ombreInterieure</code>)</h3>
+        <div class="gds__style gds__style--ombreInterieure"></div>
+        <p class="gds__description">X : 0px, Y : 0px, étendue 10px, <code>$noir</code> à 25% de transparence</p>
+
+        <h2 class="gds__sousTitre">Éléments interactifs</h2>
+        <h3>Bouton (<code>.bouton</code>)</h3>
+        <a href="#" class="bouton">Exemple de Bouton</a>
+        <p class="gds__description">
+            Arrière-plan : <code>$turquoise</code><br>
+            Couleur : $blanc <br>
+            <code>border-radius</code> : 20px <br>
+            Taille de la fonte : 16px mobile, 18px table<br>
+            Graisse de la fonte : <code>bold</code><br>
+            <em>Padding</em> : 10px 20px
+        </p>
+        <a href="#" class="bouton bouton--hover">Exemple de Bouton <em>hover</em></a>
+        <p class="gds__description">Arrière-plan : <code>background-image: linear-gradient($turquoise 50%, darken($turquoise, 15%) 50%);</code></p>
+        <h3>Bouton jaune (<code>.bouton--jaune</code>)</h3>
+        <a href="#" class="bouton bouton--jaune">+</a>
+        <p class="gds__description">
+            Arrière-plan : <code>$jaune</code>
+        </p>
+        <a href="#" class="bouton bouton--jaune--hover">+</a>
+        <p class="gds__description">
+            Arrière-plan : <code>background-image: linear-gradient($jaune 50%, darken($jaune, 15%) 50%)</code>
+        </p>
+        <h3>Bouton fushia & carré(<code>.bouton--fushia .bouton--carre</code>)</h3>
+        <a href="#" class="bouton bouton--fushia bouton--carre">Exemple de Bouton fushia</a>
+        <p class="gds__description">
+            Arrière-plan : <code>$fushia</code><br/>
+            <code>border-radius</code> : 2px
+        </p>
+        <a href="#" class="bouton bouton--fushia--hover bouton--carre">Exemple de Bouton fushia au <em>hover</em></a>
+        <p class="gds__description">
+            Arrière-plan : <code>background-image: linear-gradient($fushia 50%, darken($fushia, 15%) 50%)</code>
+
+        </p>
+
+    </div>
+</body>
+</html>

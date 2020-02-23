@@ -1,0 +1,172 @@
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+
+
+/*** GÉNÉRAL POUR LA SECTION/ASIDE TARIFS ***/
+
+/* Règles générales organisation conteneur */
+.tarifs {
+  margin: 10px 2%;
+  background-color: $grisPale;
+  @media (min-width: $bureau) {
+    width: span(6 of 12);
+    float: right;
+    margin: 30px 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  &__titre {
+    padding: 26px 0 0 10px;
+    @media (min-width: $bureau) {
+      padding-top: 0;
+    }
+  }
+
+  /* Mise en forme des éléments de liste */
+  &__liste {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: stretch;
+    margin: 0 10px;
+    &Item {
+      background-color: $blanc;
+      padding: 10px;
+      border-bottom: 2px solid $noir;
+      &--fondCouleur {
+        background-color: $turquoise;
+        color: $blanc;
+      }
+    }
+  }
+
+  /* Mise en forme des éléments spécifiques */
+  &__span  {
+    display: inline-block;
+    float: right;
+  }
+  &__prixTarifs {
+    @include fontSize(65px);
+    letter-spacing: -6.5px;
+    font-weight: 900;
+    &--texteSeul {
+      @include fontSize(60px);
+      letter-spacing: normal;
+    }
+    &--signeComplement {
+      @include fontSize(30px);
+      letter-spacing: normal;
+      padding-left: 8px;
+    }
+  }
+
+  &__texteTarifs {
+    @include fontSize(18px);
+    font-weight: 500;
+    width: 100%;
+  }
+  &__titreTarifs {
+    @include fontSize(24px);
+    text-transform: uppercase;
+    display: inline-block;
+    width: 100%;
+  }
+
+
+  &__titrePasseport {
+    background-color: $noir;
+    color: $blanc;
+    padding-left: 10px;
+    width: 300px;
+  }
+}
+
+
+/*** RÈGLES SPÉCIFIQUES SECTION .passeport ***/
+
+.passeport {
+  margin-left: 10px;
+  margin-right: 10px;
+
+  &__liste {
+    &Item {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__choix {
+    display: inline-block;
+    margin-bottom: 10px;
+    background: url('../images/composites/tarifs_pucePasseport.png') top left no-repeat;
+    margin-left: 20px;
+    padding-left: 30px;
+  }
+
+  &__bouton {
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    width: span(3 of 4);
+    text-align: center;
+  }
+
+  &__nomLieu {
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 5px;
+    letter-spacing: 1px;
+  }
+
+  &__partenaireTexte {
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    display: none;
+    @include fontSize(14px);
+  }
+  &__sousListe {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    &Item {
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+      &--ninkasi {
+        background: url('../images/composites/logo_ninkasi@1x.png') center center no-repeat;
+      }
+      &--korrigane {
+        background: url('../images/composites/logo_korrigane@1x.png') center center no-repeat;
+      }
+      &--faubourg {
+        background: url('../images/composites/logo_faubourgstjean@1x.png') center center no-repeat;
+      }
+      &--piazzetta {
+        background: url('../images/composites/logo_Piazzetta@1x.png') center center no-repeat;
+      }
+      &--chyz {
+        background: url('../images/composites/logo_chyz@1x.png') center center no-repeat;
+      }
+      &--schuz {
+        background: url('../images/composites/logo_schuz@1x.png') center center no-repeat;
+      }
+      &--ninkasi, &--korrigane, &--faubourg, &--piazzetta, &--chyz, &--schuz {
+        &:hover {
+          opacity: 0.5;
+          .passeport__partenaireTexte {
+            display: block;
+            color: $blanc;
+            background-color: transparentize($noir, 0.1);
+          }
+        }
+      }
+      @media (min-width: $bureau) {
+        margin: 0;
+      }
+    }
+  }
+}

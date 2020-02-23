@@ -1,0 +1,20 @@
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+
+/*** RÉGLES CSS GÉNÉRALES pour les balises, s'appliquent à tout le doccument ***/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, li {
+  list-style: none;
+  padding-left: 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}

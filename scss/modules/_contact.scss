@@ -1,0 +1,75 @@
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+
+/*** GÉNÉRAL POUR LA SECTION/ASIDE CONTACT ***/
+
+/* Règles générales organisation conteneur */
+.contact {
+  background-color: $grisFonce;
+  color: $blanc;
+  width: 100%;
+  display: block;
+  .conteneur {
+    margin: 10px 2% 0;
+    @media (min-width: $bureau) {
+      margin: 0 auto;
+      padding-bottom: 40px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  /* Règles spécifiques sections précises de contact */
+
+  &__titre {
+    padding: 16px 0 0 10px;
+  }
+
+  &__titreSection {
+    background-color: $blanc;
+    color: $noir;
+    padding: 3px;
+    width: span(3 of 4) + gutter(4);
+  }
+
+  &__texteSection, &__titreSection {
+    padding-left: 10px;
+  }
+
+  &__courriel {
+    display: inline-block;
+    width: 100%;
+    padding-top: 20px;
+    text-decoration: underline;
+    padding-left: 0;
+    &:hover {
+      color: $fushia;
+    }
+    //*** Pour enlever problèmes de différenciation entre les deux sections __courriel
+    &--seul {
+      text-decoration: underline;
+      &:hover {
+        color: $fushia;
+      }
+    }
+  }
+
+  @media (min-width: $bureau) {
+    &__imageCarte {
+      width: span(7 of 12);
+      float: right;
+      padding-top: 35px;
+    }
+    &__contenuTextuel {
+      padding-left: gutter(12);
+      width: span(5 of 12);
+    }
+    &__titreSection {
+      width: span(5 of 5) - gutter(5);
+    }
+  }
+}

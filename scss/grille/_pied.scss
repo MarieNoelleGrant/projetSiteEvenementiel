@@ -1,0 +1,247 @@
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+
+
+
+.footer {
+  background-color: $grisFonce;
+  color: $blanc;
+  padding: 10px 2%;
+  @media (min-width: $bureau) {
+    padding: 10px 0;
+    .conteneur {
+      @include clearfix();
+    }
+  }
+  &__entete {
+    border-top: 2px solid $blanc;
+    padding-bottom: 10px;
+  }
+  &__elementGraphique {
+    width: span(3 of 4);
+    margin: 0 auto;
+    padding-top: 10px;
+    text-align: center;
+  }
+  &__dates, &__logo {
+    width: 231px;
+  }
+
+  @media (min-width: $bureau) {
+    &__entete {
+      display: flex;
+      flex-flow: row-reverse nowrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__elementGraphique {
+      width: span(4 of 12);
+      margin: 0;
+      padding: 30px 10px;
+    }
+    &__dates {
+      width: 300px;
+    }
+  }
+
+  &__espacePub {
+    &_conteneur {
+      padding: 3px 0;
+      margin-top: 20px;
+      color: $noir;
+      background-color: $blanc;
+      text-align: center;
+      @media (min-width: $bureau) {
+        width: span(5 of 12);
+        float: left;
+      }
+    }
+    &_infolettre,
+    &_reseauxSociaux {
+      padding-top: 20px;
+    }
+
+    &_titre {
+      text-transform: none;
+    }
+  }
+
+  /*** SECTION INFOLETTRE ***/
+  .infolettre {
+    &__courriel,
+    &__bouton {
+      width: span(3 of 4);
+      margin: 0 auto;
+      padding: 10px;
+      border: 1px solid $grisFonce;
+      @media (min-width: $bureau) {
+        width: span(4 of 4) - gutter(4);
+      }
+    }
+    &__courriel {
+      text-align: center;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+    &__bouton {
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+  }
+
+  /*** SECTION RÉSEAUX SOCIAUX ***/
+  .reseauxSociaux {
+    &__liste {
+      width: span(2 of 4) + 2*gutter();
+      margin: 0 auto;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      @media (min-width: $bureau) {
+        margin: 0;
+        width: span(4 of 4);
+        justify-content: space-evenly;
+      }
+      &Item {
+        font-size: 40px;
+      }
+    }
+
+    /*** Images en background qui apparaissent au hover des éléments sociaux */
+    &__lien {
+      padding: 20px;
+      &--facebook {
+        &:hover,
+        &:active {
+          background: url('../images/elementsGraphiques/bg_hover_OFF.svg') center center no-repeat;
+          background-size: cover;
+        }
+      }
+      &--twitter {
+        &:hover,
+        &:active {
+          background: url('../images/elementsGraphiques/bg_hover_prog.svg') center center no-repeat;
+          background-size: cover;
+        }
+      }
+      &--instagram {
+        &:hover,
+        &:active {
+          background: url('../images/elementsGraphiques/bg_hover_artistes.svg') center center no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+  }
+  @media (min-width: $bureau) {
+    margin-top: 0;
+    text-align: left;
+    padding-left: 0;
+    &_titre {
+      padding-left: 20px;
+    }
+    &_conteneur {
+      width: span(5 of 12);
+      display: inline-block;
+      margin-top: 16px;
+    }
+  }
+
+  &__menu {
+    padding: 10px;
+    @media (min-width: $bureau) {
+      padding: 0;
+      &_conteneur {
+        float: right;
+        width: span(6 of 12);
+        display: inline-block;
+      }
+    }
+  }
+
+  &__liste {
+    @media (min-width: $bureau) {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+    &Item {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      @include fontSize(18px);
+      font-weight: 700;
+      letter-spacing: 1px;
+      @media (min-width: $bureau) {
+        width: span(3 of 6);
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &__sousListe {
+    padding: 10px;
+    font-weight: 300;
+    &Item {
+      padding: 5px;
+      @include fontSize(16px);
+      border-bottom: 5px solid transparent;
+      &:hover,
+      &:active {
+        border-bottom : 5px solid $turquoise;
+        font-weight: 500;
+      }
+    }
+  }
+
+  /*** Images en background qui apparaissent au hover des éléments de menu */
+  &__lien {
+    padding: 10px;
+    background-color: $blanc;
+    color: $noir;
+    &--off {
+      &:hover,
+      &:active {
+        background: url('../images/elementsGraphiques/bg_hover_OFF.svg') left center no-repeat;
+        background-size: contain;
+        background-color: $blanc;
+      }
+    }
+    &--prog {
+      &:hover,
+      &:active {
+        background: url('../images/elementsGraphiques/bg_hover_prog.svg') left center no-repeat;
+        background-size: contain;
+        background-color: $blanc;
+      }
+    }
+    &--artistes {
+      &:hover,
+      &:active {
+        background: url('../images/elementsGraphiques/bg_hover_artistes.svg') left center no-repeat;
+        background-size: contain;
+        background-color: $blanc;
+      }
+    }
+    &--partenaires {
+      &:hover,
+      &:active {
+        background: url('../images/elementsGraphiques/bg_hover_partenaires.svg') left center no-repeat;
+        background-size: contain;
+        background-color: $blanc;
+      }
+    }
+  }
+
+  /*** Pour faire disparaître le triangle en after pour le footer */
+  @media (min-width: 701px) {
+    .menu__listeItem--actif {
+      &:after {
+        content: "";
+      }
+    }
+  }
+}

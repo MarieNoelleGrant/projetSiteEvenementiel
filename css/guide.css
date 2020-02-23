@@ -1,0 +1,670 @@
+@charset "UTF-8";
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+/**
+ * ------------------
+ * TABLE DES MATIÈRES
+ * ------------------
+ * Librairies
+ * Utilitaires
+ * Base
+ * Modules
+ * Grille
+ * Règles spécifiques
+ */
+/****** Librairies ******/
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Titillium+Web:400,600,700,900");
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+/**** Utilitaires ****/
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+/** Polices de caractères **/
+/** Palette de couleurs **/
+/* Couleurs de base */
+/* Autres couleurs */
+/** Points de rupture **/
+/**
+* @author Ève Février - efevrier@cegep-ste-foy.qc.ca
+* @author Yves Hélie - yves.helie@cegep-ste-foy.qc.ca
+*/
+/**
+ * ----------------------------
+ * TABLE DES MATIERES - MIXINS
+ * ----------------------------
+ * Utilitaires de base
+ ** Box sizing
+ ** Clearfix
+ * Accessibilité
+ * Typographie
+ */
+/********** Utilitaires de base **********/
+/** Box sizing **/
+/* Clearfix */
+/********* Accessibilité *********/
+.visuallyhidden,
+.screen-reader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus,
+.screen-reader-only.focusable:active,
+.screen-reader-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/******** Typographie *********/
+/****** Base ******/
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+/*** IMPORTATION DES FONTES DE GOOGLE FONTS ***/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-family: "Roboto", Arial, sans-serif;
+  line-height: 1.375;
+  /* facteur multiplicateur de la taille de la police 1.375x16=22 */
+}
+@media (min-width: 601px) {
+  body {
+    line-height: 1.5;
+  }
+}
+
+h1, .h1,
+h2, .h2 {
+  font-family: "Titillium Web", Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+}
+
+h1, .h1 {
+  font-size: 34px;
+  font-size: 3.4rem;
+}
+@media (min-width: 601px) {
+  h1, .h1 {
+    font-size: 44px;
+    font-size: 4.4rem;
+  }
+}
+
+h2, .h2 {
+  font-size: 30px;
+  font-size: 3rem;
+}
+@media (min-width: 601px) {
+  h2, .h2 {
+    font-size: 34px;
+    font-size: 3.4rem;
+  }
+}
+
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+}
+
+h3, .h3 {
+  font-size: 22px;
+  font-size: 2.2rem;
+}
+@media (min-width: 601px) {
+  h3, .h3 {
+    font-size: 24px;
+    font-size: 2.4rem;
+  }
+}
+
+h4, .h4,
+h5, .h5 {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+@media (min-width: 601px) {
+  h4, .h4,
+  h5, .h5 {
+    font-size: 18px;
+    font-size: 1.8rem;
+  }
+}
+
+h5, .h5 {
+  font-weight: 500;
+  margin: 0;
+}
+
+.h1--blanc,
+.h2--blanc,
+.h3--blanc,
+.h4--blanc {
+  color: #FFFFFF;
+}
+
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+.bouton {
+  background-color: #2F8B8B;
+  border-radius: 20px;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+@media (min-width: 601px) {
+  .bouton {
+    font-size: 18px;
+  }
+}
+.bouton:hover, .bouton--hover {
+  background-image: linear-gradient(#2F8B8B 50%, #1c5252 50%);
+}
+.bouton--jaune {
+  background-color: #E5A90E;
+  color: #000000;
+  padding: 10px 15px;
+}
+.bouton--jaune:hover, .bouton--jaune--hover {
+  padding: 10px 15px;
+  color: #000000;
+  background-image: linear-gradient(#E5A90E 50%, #9d740a 50%);
+  box-shadow: inset #404040 0 0 10px;
+  border-color: rgba(229, 169, 14, 0.5);
+}
+.bouton--fushia {
+  background-color: #8B2F71;
+}
+.bouton--fushia:hover, .bouton--fushia--hover {
+  background-image: linear-gradient(#8B2F71 50%, #521c43 50%);
+}
+.bouton--carre {
+  border-radius: 2px;
+}
+
+/****** Modules ******/
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+.gds__titre {
+  border-bottom: 3px solid #383838;
+  text-align: left;
+  padding-bottom: 5px;
+}
+.gds__sousTitre {
+  border-bottom: 1px solid #383838;
+  text-align: left;
+  padding-bottom: 5px;
+  font-family: 'Roboto', Arial, sans-serif;
+  text-transform: none;
+}
+.gds__description {
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+.gds__titreTypo {
+  display: inline-block;
+  width: 49.1525423729%;
+  padding-left: 30px;
+}
+.gds__titreTypo--blanc {
+  background-color: #1F1F1F;
+  color: #FFFFFF;
+}
+.gds__palette {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style-type: none;
+  padding: 0;
+}
+.gds__paletteItem {
+  margin: 5px 0;
+  width: 32.2033898305%;
+}
+.gds__paletteCouleur {
+  border: 1px solid gray;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+.gds__paletteCouleur--grisFonce {
+  background-color: #1F1F1F;
+}
+.gds__paletteCouleur--turquoise {
+  background-color: #2F8B8B;
+}
+.gds__paletteCouleur--blanc {
+  background-color: #FFFFFF;
+}
+.gds__paletteCouleur--noir {
+  background-color: #000000;
+}
+.gds__paletteCouleur--jaune {
+  background-color: #E5A90E;
+}
+.gds__paletteCouleur--fushia {
+  background-color: #8B2F71;
+}
+.gds__paletteCouleur--fushiaFonce {
+  background-color: #521c43;
+}
+.gds__paletteCouleur--jauneFonce {
+  background-color: #9d740a;
+}
+.gds__paletteCouleur--turquoiseFonce {
+  background-color: #1c5252;
+}
+.gds__style {
+  width: 100px;
+  height: 100px;
+}
+.gds__style--ombrePortee {
+  box-shadow: #bfbfbf 0 0 25px;
+}
+.gds__style--ombreInterieure {
+  box-shadow: inset #404040 0 0 10px;
+  border-color: rgba(229, 169, 14, 0.5);
+}
+
+/****** Grille ******/
+/**
+ * @author Yves Hélie (fourni)
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@media (max-width: 600px) {
+  .conteneur {
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="url(%23susy-svg-gradient)" width="100%" %3E%3Cdefs%3E%3ClinearGradient spreadMethod="pad" id="susy-svg-gradient" x1="0%" y1="0%" x2="100%" y2="0%"%3E%3Cstop offset="0%" style="stop-color:rgba(64, 191, 64, 0.5);" /%3E%3Cstop offset="100%" style="stop-color:rgba(159, 223, 159, 0.5);" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x="0" width="21.0526315789%" height="100%"/%3E%3Crect x="26.3157894737%" width="21.0526315789%" height="100%"/%3E%3Crect x="52.6315789474%" width="21.0526315789%" height="100%"/%3E%3Crect x="78.9473684211%" width="21.0526315789%" height="100%"/%3E%3C/svg%3E') no-repeat scroll;
+  }
+}
+@media (min-width: 601px) {
+  .conteneur {
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="url(%23susy-svg-gradient)" width="100%" %3E%3Cdefs%3E%3ClinearGradient spreadMethod="pad" id="susy-svg-gradient" x1="0%" y1="0%" x2="100%" y2="0%"%3E%3Cstop offset="0%" style="stop-color:rgba(64, 191, 64, 0.5);" /%3E%3Cstop offset="100%" style="stop-color:rgba(159, 223, 159, 0.5);" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x="0" width="6.7796610169%" height="100%"/%3E%3Crect x="8.4745762712%" width="6.7796610169%" height="100%"/%3E%3Crect x="16.9491525424%" width="6.7796610169%" height="100%"/%3E%3Crect x="25.4237288136%" width="6.7796610169%" height="100%"/%3E%3Crect x="33.8983050847%" width="6.7796610169%" height="100%"/%3E%3Crect x="42.3728813559%" width="6.7796610169%" height="100%"/%3E%3Crect x="50.8474576271%" width="6.7796610169%" height="100%"/%3E%3Crect x="59.3220338983%" width="6.7796610169%" height="100%"/%3E%3Crect x="67.7966101695%" width="6.7796610169%" height="100%"/%3E%3Crect x="76.2711864407%" width="6.7796610169%" height="100%"/%3E%3Crect x="84.7457627119%" width="6.7796610169%" height="100%"/%3E%3Crect x="93.2203389831%" width="6.7796610169%" height="100%"/%3E%3C/svg%3E') no-repeat scroll;
+  }
+}
+/* Classe .contain ajoutée pour avoir propriétés du .conteneur, sans pour autant modifier les règles de styles déjà appliquées ailleurs à .conteneur */
+.conteneur, .contain {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+/* Ajout permanent du clearfix aux éléments avec conteneur */
+.conteneur__clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+/****** Règles spécifiques ******/
+body {
+  margin: 50px auto;
+  padding: 0 50px;
+}
+
+/*# sourceMappingURL=guide.css.map */

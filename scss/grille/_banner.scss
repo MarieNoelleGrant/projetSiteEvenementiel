@@ -1,0 +1,20 @@
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+
+.bannerFiche {
+  position: relative;
+  &__espaceNom {
+    position: absolute;
+    background-color: $blanc;
+    padding: 10px 30px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    & h1 {
+      margin-bottom: 0;
+    }
+  }
+}

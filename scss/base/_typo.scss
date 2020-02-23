@@ -1,0 +1,77 @@
+/**
+ * @author Marie-Noëlle Grant <m.noelle.grant@gmail.com>
+ * @todo Compléter selon l'énoncé
+*/
+
+/*** IMPORTATION DES FONTES DE GOOGLE FONTS ***/
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Titillium+Web:400,600,700,900');
+
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  @include fontSize(16px);
+  font-family: $fonteSecondaire;
+  line-height: 1.375;
+  /* facteur multiplicateur de la taille de la police 1.375x16=22 */
+  @media (min-width:$bureau) {
+    line-height: 1.5;
+  }
+}
+
+h1, .h1,
+h2, .h2 {
+  font-family: $fontePrimaire;
+  font-weight: 900;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+}
+
+h1, .h1 {
+  @include fontSize(34px);
+  @media (min-width:$bureau){
+    @include fontSize(44px);
+  }
+}
+
+h2, .h2 {
+  @include fontSize(30px);
+  @media (min-width:$bureau){
+    @include fontSize(34px);
+  }
+}
+
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+  font-family: $fonteSecondaire;
+  font-weight: 700;
+}
+
+h3, .h3 {
+  @include fontSize(22px);
+  @media (min-width:$bureau){
+    @include fontSize(24px);
+  }
+}
+
+h4, .h4,
+h5, .h5 {
+  @include fontSize(16px);
+  @media (min-width:$bureau){
+    @include fontSize(18px);
+  }
+}
+h5, .h5 {
+  font-weight: 500;
+  margin: 0;
+}
+
+.h1--blanc,
+.h2--blanc,
+.h3--blanc,
+.h4--blanc {
+  color: $blanc;
+}
